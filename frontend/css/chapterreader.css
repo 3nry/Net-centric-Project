@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+body, #root {
+  background: #f8fafc !important;
+  min-height: 100vh;
+}
+
+/* ===== PAGE ===== */
+.cr-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: 'DM Sans', sans-serif;
+  color: #0f172a;
+}
+
+/* ===== NAVBAR ===== */
+.cr-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.cr-navbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cr-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.cr-back-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #334155;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cr-back-btn:hover {
+  border-color: #6366f1;
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+.cr-nav-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.cr-manga-name {
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.cr-sep {
+  color: #cbd5e1;
+}
+
+.cr-chapter-name {
+  color: #0f172a;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.cr-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.cr-logo-icon {
+  font-size: 18px;
+  color: #6366f1;
+}
+
+.cr-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.cr-logo-accent {
+  color: #6366f1;
+}
+
+/* ===== CONTENT ===== */
+.cr-content {
+  padding: 34px 16px 68px;
+}
+
+/* ===== PAGES ===== */
+.cr-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.cr-page-img {
+  width: 100%;
+  max-width: 820px;
+  display: block;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.cr-page-error {
+  width: 100%;
+  max-width: 820px;
+  height: 120px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ===== END OF CHAPTER ===== */
+.cr-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 52px 0 16px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.cr-back-bottom {
+  padding: 11px 26px;
+  background: #6366f1;
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.22);
+}
+
+.cr-back-bottom:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* ===== STATES ===== */
+.cr-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 120px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.cr-loader {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cr-error-icon {
+  font-size: 36px;
+}
+
+.cr-retry-btn {
+  padding: 9px 22px;
+  background: #ffffff;
+  border: 1px solid #6366f1;
+  border-radius: 999px;
+  color: #4f46e5;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cr-retry-btn:hover {
+  background: #eef2ff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .cr-navbar-inner {
+    height: 58px;
+    padding: 0 14px;
+  }
+
+  .cr-manga-name {
+    display: none;
+  }
+
+  .cr-sep {
+    display: none;
+  }
+
+  .cr-chapter-name {
+    max-width: 150px;
+  }
+
+  .cr-logo {
+    display: none;
+  }
+
+  .cr-content {
+    padding: 20px 8px 48px;
+  }
+
+  .cr-page-img {
+    border-radius: 6px;
+  }
+}

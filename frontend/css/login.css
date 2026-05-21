@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ===== LOGIN BG ===== */
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff1f7 0%, #ffe4ef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.login-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(236,72,153,0.22) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+}
+
+/* ===== CARD ===== */
+.login-card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(236, 72, 153, 0.18);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow:
+    0 24px 60px rgba(236, 72, 153, 0.12),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(18px);
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== BRAND ===== */
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.login-brand-icon {
+  font-size: 24px;
+  color: #ec4899;
+}
+
+.login-brand-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.login-brand-name span {
+  color: #ec4899;
+}
+
+.login-subtitle {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0 0 28px 0;
+  font-weight: 400;
+}
+
+/* ===== FORM ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #be185d;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.login-field input {
+  background: #ffffff;
+  border: 1px solid #fbcfe8;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #1e293b;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.login-field input::placeholder {
+  color: #c08497;
+}
+
+.login-field input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 4px rgba(236,72,153,0.12);
+}
+
+/* ===== ERROR ===== */
+.login-error {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.18);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #e11d48;
+  font-size: 13px;
+}
+
+/* ===== SUBMIT ===== */
+.login-submit {
+  margin-top: 4px;
+  padding: 13px;
+  background: linear-gradient(135deg, #ec4899, #f472b6);
+  border: none;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  box-shadow: 0 10px 24px rgba(236,72,153,0.22);
+}
+
+.login-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #db2777, #ec4899);
+}
+
+.login-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== SPINNER ===== */
+.login-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== TOGGLE ===== */
+.login-toggle {
+  display: flex;
+  background: #ffe4ef;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 24px;
+  gap: 4px;
+}
+
+.login-toggle-btn {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #9d174d;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-toggle-btn.active {
+  background: #ec4899;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(236,72,153,0.18);
+}
+
+/* ===== SWITCH LINK ===== */
+.login-switch {
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.login-switch button {
+  background: none;
+  border: none;
+  color: #ec4899;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.login-switch button:hover {
+  color: #db2777;
+}
